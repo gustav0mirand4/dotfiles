@@ -1,5 +1,6 @@
 call plug#begin()
 
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'altercation/solarized'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
@@ -41,6 +42,8 @@ set signcolumn=yes
 set updatetime=300
 set autoread
 set termguicolors
+set noshowmode
+
 filetype on
 filetype plugin on
 filetype indent on 
@@ -55,7 +58,7 @@ vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 
 "Vim Airline themes
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
@@ -74,10 +77,6 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-a> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-
-let g:sonokai_style = 'andromeda'
-let g:sonokai_better_performace = 1
-
 " Use tab for trigger completion with characters ahead and navigate
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file
@@ -98,3 +97,5 @@ function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+:colorscheme catppuccin_mocha
